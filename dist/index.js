@@ -8447,11 +8447,11 @@ const github = __nccwpck_require__(2623);
 async function run()
 {
     const token = core.getInput("token");
-    const octokit = github.getOctokit(token);
+    const octokit = github.getOctokit(token);        
     const res = await octokit.rest.repos.getContent({
-        owner: "prethora",
-        repo: "playground__githubjsactiontest",
-        path: "action.yml",
+        owner: github.context.payload.repository.owner.name,
+        repo: github.context.payload.repository.name,
+        path: "package.json",
     });
     console.log(res);
 }
