@@ -8449,12 +8449,10 @@ async function extractChanges(filePath,version)
 {
     try
     {
-        console.log("was here 1");
         const ret = [];
         let recording = false;
         (await fs.readFile(filePath,"utf8")).split("\n").forEach((line) => 
         {
-            console.log("was here 2");
             const res = /^\s*##\s+v?(\d+\.\d+\.\d+)\s*$/.exec(line);
             if (res)
             {
@@ -8465,12 +8463,11 @@ async function extractChanges(filePath,version)
                 ret.push(line);
             }        
         });
-        console.log("was here 3");
         return ret.join("\n").trim();    
     }
     catch(err)
     {
-        console.log("was here 4",err);
+        console.log("error: ",err);
         return "";
     }
 }
