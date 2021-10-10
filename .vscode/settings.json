@@ -1,0 +1,10 @@
+{
+  "files.exclude": {
+    ".vscode/": true,
+    ".gitignore": true,
+    "package-lock.json": true,
+    "dist": true,
+    "node_modules": true,
+    "dev-bin": true
+  }
+}
